@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Database error!</title>
+</head>
+<body>
+
+<h1>Database error!</h1>
+<p th:text="${exception.message}">exception</p>
+<p th:text="${state}">state</p>
+<ul>
+    <li th:each="ste : ${exception.stackTrace}" th:utext="${ste}">trace</li>
+</ul>
+
+</body>
+</html>

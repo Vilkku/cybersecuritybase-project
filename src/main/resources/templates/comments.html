@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Comments</title>
+</head>
+<body>
+
+<h1>Event comments</h1>
+
+<h2>Add new comment</h2>
+<p>Feel free to use HTML tags such as &lt;b&gt; in the comments!</p>
+<form action="#" th:action="@{/comments}" method="POST">
+    <p><label for="comment">Comment</label>: <input type="text" name="comment" id="comment"/></p>
+    <p><input type="submit" value="Submit" /></p>
+</form>
+
+<h2>Comments</h2>
+<ul>
+    <li th:each="comment : ${comments}" th:utext="${comment}">comment text</li>
+</ul>
+
+</body>
+</html>
